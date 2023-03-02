@@ -71,7 +71,8 @@ Database schema definitions.
 | title       | String                                          | The name of the task.               |
 | description | String                                          | A short description about the task. |
 | due         | Date                                            | The set due date for the task.      |
-| createdAt   | Date                                            | The date the task was created.      |
+| created_at  | Date                                            | The date the task was created.      |
+| upgdated_at | Date                                            | The date the task was updated.      |
 | status      | ENUM `[CREATED, ONGOING, COMPLETED, CANCELLED]` | The status of the task.             |
 | user_id     | Integer                                         | The user's task identifier          |
 
@@ -83,7 +84,7 @@ Database schema definitions.
 | full_name     | String    | User's full name.                     |
 | password_hash | String    | User's password hashed with `BCrypt`. |
 | updated_at    | Date      | The date the user was updated.        |
-| createdAt     | Date      | The date the user was created.        |
+| created_at    | Date      | The date the user was created.        |
 
 
 ### ROUTES
