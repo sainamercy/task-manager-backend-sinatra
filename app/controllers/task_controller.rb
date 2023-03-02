@@ -11,15 +11,16 @@ class TaskController < AppController
     end
 
     # @method: Display all tasks
-    get '/tasks' do
-        tasks = Task.all
+    get '/tasks/:id' do
+        tasks = Task.all.filter { |task| task.user_id == self.helper_id }
+    
         json_response(data: tasks)
     end
 
     # @method: Update existing TASK according to :id
     put '/tasks/update/:id' do
         begin
-            task = Task.find(self.task_id)
+            task = Task.find(self.helper_id)
             task.update(self.data)
             json_response(data: { message: "task updated successfully" })
         rescue => e
@@ -30,7 +31,7 @@ class TaskController < AppController
     # @method: Delete TASK based on :id
     delete '/tasks/destroy/:id' do
         begin
-            task = Task.find(self.task_id)
+            task = Task.find(self.helper_id)
             task.destroy
             json_response(data: { message: "todo deleted successfully" })
         rescue => e
@@ -49,7 +50,7 @@ class TaskController < AppController
     end
 
     # @helper: retrieve task :id
-    def task_id
+    def helper_id
         params['id'].to_i
     end
 

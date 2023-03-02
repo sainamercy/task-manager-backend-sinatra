@@ -37,13 +37,12 @@ class UserController < AppController
         error_response(422, e)
       end
     end
-  
+
     private
-  
     # @helper: parse user JSON data
     def user_data
       JSON.parse(request.body.read)
     end
-  
+    
   end
   
