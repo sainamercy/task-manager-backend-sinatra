@@ -57,6 +57,7 @@ This application is a simple web API that allows users to:
 - Create TASK items.
 - Update individual TASK items.
 - View all TASK items.
+- Organize Task items by status
 - Filter TASK items by date.
 - Delete a TASK item.
 
@@ -119,7 +120,7 @@ Database schema definitions.
     "due": "2023-09-09"
    }
    ```
-4. `/tasks` - List all TASKS items.
+4. `/tasks:id` - List all TASKS items for a specific user.
 
    ```{json}
    ## RESPONSE SAMPLE
@@ -129,8 +130,11 @@ Database schema definitions.
             "id": 2,
             "title": "Running another DSA practice 2",
             "description": "A wild desc",
+            "user_id": 1
             "due": "2023-02-24T00:00:00.000Z",
-            "createdAt": "2023-02-24T09:34:41.856Z",
+            "created_at": "2023-02-24T09:34:41.856Z",
+            "updated_at": "2023-02-24T09:34:41.856Z",
+            "priority": "LOW",
             "status": "CREATED"
         }],
     "message": "SUCCESS"
