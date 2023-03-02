@@ -72,7 +72,8 @@ Database schema definitions.
 | description | String                                          | A short description about the task. |
 | due         | Date                                            | The set due date for the task.      |
 | createdAt   | Date                                            | The date the task was created.      |
-| status      | ENUM `[CREATED, ONGOING, COMPLETED, CANCELLED]` | TThe status of the task.            |
+| status      | ENUM `[CREATED, ONGOING, COMPLETED, CANCELLED]` | The status of the task.             |
+| user_id     | Integer                                         | The task user identifier            |
 
 
 #### USER
