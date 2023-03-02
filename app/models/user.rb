@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    has_may :tasks
+    has_many :tasks
     include BCrypt
   
     # retrieve password from hash

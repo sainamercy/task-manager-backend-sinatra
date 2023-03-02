@@ -70,11 +70,12 @@ Database schema definitions.
 | id          | Integer                                         | Unique identifier.                  |
 | title       | String                                          | The name of the task.               |
 | description | String                                          | A short description about the task. |
+| user_id     | Integer                                         | The user's task identifier          |
 | due         | Date                                            | The set due date for the task.      |
 | created_at  | Date                                            | The date the task was created.      |
 | upgdated_at | Date                                            | The date the task was updated.      |
+| priority    | ENUM `[LOW, MEDIUM, HIGH]`                      | The priority of the task.           |
 | status      | ENUM `[CREATED, ONGOING, COMPLETED, CANCELLED]` | The status of the task.             |
-| user_id     | Integer                                         | The user's task identifier          |
 
 
 #### USER
