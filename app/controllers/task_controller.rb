@@ -1,7 +1,7 @@
 class TaskController < AppController
 
     # @method: Add a new TASK to the DB
-    post '/todos/create' do
+    post '/tasks/create' do
         begin
             task = Task.create( self.data(create: true) )
             json_response(code: 201, data: task)
@@ -11,13 +11,13 @@ class TaskController < AppController
     end
 
     # @method: Display all tasks
-    get '/todos' do
+    get '/tasks' do
         tasks = Task.all
         json_response(data: tasks)
     end
 
     # @method: Update existing TASK according to :id
-    put '/todos/update/:id' do
+    put '/tasks/update/:id' do
         begin
             task = Task.find(self.task_id)
             task.update(self.data)
@@ -44,7 +44,7 @@ class TaskController < AppController
     # @helper: format body data
     def data(create: false)
         payload = JSON.parse(request.body.read)
-        
+
         payload
     end
 
