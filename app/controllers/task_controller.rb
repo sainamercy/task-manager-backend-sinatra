@@ -57,6 +57,6 @@ class TaskController < AppController
 
     # @helper: retrieve  user id
     def  get_user_id
-     request.env['HTTP_USER_ID']
+     request.env['HTTP_X_USER_ID']
     end
 end
