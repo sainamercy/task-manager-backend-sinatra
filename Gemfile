@@ -1,6 +1,6 @@
 source "https://rubygems.org/"
 
-ruby File.read('.ruby-version').strip
+ruby '3.0.3'
 
 gem 'sinatra', '~> 3.0', '>= 3.0.5'
 

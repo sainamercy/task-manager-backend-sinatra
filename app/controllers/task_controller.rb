@@ -11,8 +11,9 @@ class TaskController < AppController
     end
 
     # @method: Display all tasks
-    get '/tasks/:id' do
-        tasks = Task.all.filter { |task| task.user_id == self.helper_id }
+    get '/tasks' do
+        user_id = get_user_id
+        tasks = Task.all.filter { |task| task.user_id == user_id.to_i}
     
         json_response(data: tasks)
     end
@@ -54,4 +55,8 @@ class TaskController < AppController
         params['id'].to_i
     end
 
+    # @helper: retrieve  user id
+    def  get_user_id
+     request.env['HTTP_USER_ID']
+    end
 end

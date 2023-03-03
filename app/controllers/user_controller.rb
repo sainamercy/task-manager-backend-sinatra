@@ -38,6 +38,10 @@ class UserController < AppController
       end
     end
 
+    get '/users' do
+      json_response(code: 200, data: User.all)
+    end
+
     private
     # @helper: parse user JSON data
     def user_data

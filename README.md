@@ -120,7 +120,7 @@ Database schema definitions.
     "due": "2023-09-09"
    }
    ```
-4. `/tasks:id` - List all TASKS items for a specific user.
+4. `/tasks` - List all TASKS items for a specific user.
 
    ```{json}
    ## RESPONSE SAMPLE
