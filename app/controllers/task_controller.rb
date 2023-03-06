@@ -29,8 +29,31 @@ class TaskController < AppController
         end
     end
 
+    # @method: Update existing TASK according to :id
+    post '/tasks/update/:id' do
+        begin
+            task = Task.find(self.helper_id)
+            task.update(self.data)
+            task = Task.find(self.helper_id)
+            json_response(data: { message: "task updated successfully" , task:task})
+        rescue => e
+            json_response(code: 422 ,data: { error: e.message })
+        end
+    end
+
     # @method: Delete TASK based on :id
     delete '/tasks/destroy/:id' do
+        begin
+            task = Task.find(self.helper_id)
+            task.destroy
+            json_response(data: { message: "todo deleted successfully" })
+        rescue => e
+          json_response(code: 422, data: { error: e.message })
+        end
+    end
+
+    # @method: Delete TASK based on :id
+    post '/tasks/destroy/:id' do
         begin
             task = Task.find(self.helper_id)
             task.destroy
