@@ -28,7 +28,8 @@ class UserController < AppController
         if user_data.password == @user['password']
           json_response(code: 200, data: {
             id: user_data.id,
-            email: user_data.email
+            email: user_data.email,
+            full_name: user_data.full_name
           })
         else
           json_response(code: 422, data: { message: "Your email/password combination is not correct" })
